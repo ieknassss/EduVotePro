@@ -49,6 +49,9 @@ namespace ProyectoSistemaEletoralEstudiantil.Presentation.Forms
                     MessageBoxIcon.Information);
 
                 this.Hide();
+                FrmDashboard dashboard = new FrmDashboard();
+
+                dashboard.Show();
             }
             else
             {

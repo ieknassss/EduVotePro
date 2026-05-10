@@ -52,6 +52,10 @@
             // cbRole
             // 
             this.cbRole.FormattingEnabled = true;
+            this.cbRole.Items.AddRange(new object[] {
+            "Administrador General",
+            "Administrador Partido",
+            "Estudiante"});
             this.cbRole.Location = new System.Drawing.Point(195, 197);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(560, 28);
@@ -126,8 +130,9 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

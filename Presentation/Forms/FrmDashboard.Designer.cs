@@ -122,6 +122,7 @@
             this.btnElections.TabIndex = 1;
             this.btnElections.Text = "Elecciones";
             this.btnElections.UseVisualStyleBackColor = true;
+            this.btnElections.Click += new System.EventHandler(this.btnElections_Click);
             // 
             // btnUsers
             // 
@@ -146,6 +147,7 @@
             this.btnParties.TabIndex = 3;
             this.btnParties.Text = "Planchas";
             this.btnParties.UseVisualStyleBackColor = true;
+            this.btnParties.Click += new System.EventHandler(this.btnParties_Click);
             // 
             // btnReports
             // 

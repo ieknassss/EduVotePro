@@ -70,5 +70,21 @@ namespace ProyectoSistemaEletoralEstudiantil.Presentation.Forms
         {
             Application.Restart();
         }
+
+        private void btnElections_Click(object sender, EventArgs e)
+        {
+            FrmElectionscs elections =
+       new FrmElectionscs();
+
+            elections.ShowDialog();
+        }
+
+        private void btnParties_Click(object sender, EventArgs e)
+        {
+            FrmParties parties =
+        new FrmParties();
+
+            parties.ShowDialog();
+        }
     }
 }

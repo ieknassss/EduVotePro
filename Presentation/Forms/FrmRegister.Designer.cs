@@ -152,7 +152,6 @@
             this.cbRole.Items.AddRange(new object[] {
             "Administrador General",
             "Administrador Partido",
-            "",
             "Estudiante"});
             this.cbRole.Location = new System.Drawing.Point(371, 547);
             this.cbRole.Name = "cbRole";

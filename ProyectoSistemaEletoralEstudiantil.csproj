@@ -88,11 +88,29 @@
       <DependentUpon>EduVoteModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\Seeders\InitialDataSeeder.cs" />
+    <Compile Include="Presentation\Forms\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmElectionscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmElectionscs.Designer.cs">
+      <DependentUpon>FrmElectionscs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmParties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmParties.Designer.cs">
+      <DependentUpon>FrmParties.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Forms\FrmRegister.cs">
       <SubType>Form</SubType>
@@ -116,8 +134,17 @@
     </Compile>
     <Compile Include="Security\Encryption\PasswordEncryptor.cs" />
     <Compile Include="Security\Sessions\UserSession.cs" />
+    <EmbeddedResource Include="Presentation\Forms\FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Forms\FrmElectionscs.resx">
+      <DependentUpon>FrmElectionscs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Forms\FrmParties.resx">
+      <DependentUpon>FrmParties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Forms\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
