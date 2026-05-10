@@ -47,6 +47,8 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,14 +60,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presentation\Forms\Form1.cs">
+    <Compile Include="DataAccess\Models\AuditLogs.cs">
+      <DependentUpon>EduVoteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Models\EduVoteModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EduVoteModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Models\EduVoteModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EduVoteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Models\EduVoteModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EduVoteModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Models\Elections.cs">
+      <DependentUpon>EduVoteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Models\Parties.cs">
+      <DependentUpon>EduVoteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Models\Roles.cs">
+      <DependentUpon>EduVoteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Seeders\InitialDataSeeder.cs" />
+    <Compile Include="Presentation\Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Presentation\Forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmRegister.Designer.cs">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Forms\FrmWelcome.Designer.cs">
+      <DependentUpon>FrmWelcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataAccess\Models\Users.cs">
+      <DependentUpon>EduVoteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Models\Votes.cs">
+      <DependentUpon>EduVoteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Encryption\PasswordEncryptor.cs" />
+    <Compile Include="Security\Sessions\UserSession.cs" />
+    <EmbeddedResource Include="Presentation\Forms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Forms\FrmRegister.resx">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Forms\FrmWelcome.resx">
+      <DependentUpon>FrmWelcome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +134,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="DataAccess\Models\EduVoteModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EduVoteModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataAccess\Models\EduVoteModel.edmx.diagram">
+      <DependentUpon>EduVoteModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,10 +178,23 @@
     <Folder Include="Reports\Statistics\" />
     <Folder Include="Reports\Templates\" />
     <Folder Include="Security\Authentication\" />
-    <Folder Include="Security\Encryption\" />
-    <Folder Include="Security\Sessions\" />
     <Folder Include="Themes\" />
     <Folder Include="Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataAccess\Models\EduVoteModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EduVoteModel.edmx</DependentUpon>
+      <LastGenOutput>EduVoteModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataAccess\Models\EduVoteModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EduVoteModel.edmx</DependentUpon>
+      <LastGenOutput>EduVoteModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

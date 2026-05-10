@@ -12,27 +12,18 @@ namespace ProyectoSistemaEletoralEstudiantil.DataAccess.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Roles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
+        public Roles()
         {
-            this.Votes = new HashSet<Votes>();
+            this.Users = new HashSet<Users>();
         }
     
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string LastName { get; set; }
-        public string StudentCode { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
-        public string Role { get; set; }
-        public Nullable<bool> HasVoted { get; set; }
-        public Nullable<System.DateTime> CreatedAt { get; set; }
-        public Nullable<int> RoleId { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Votes> Votes { get; set; }
-        public virtual Roles Roles { get; set; }
+        public virtual ICollection<Users> Users { get; set; }
     }
 }

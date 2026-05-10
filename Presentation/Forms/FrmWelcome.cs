@@ -16,5 +16,19 @@ namespace ProyectoSistemaEletoralEstudiantil.Presentation.Forms
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            FrmRegister register = new FrmRegister();
+
+            register.ShowDialog();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FrmLogin login = new FrmLogin();
+
+            login.ShowDialog();
+        }
     }
 }

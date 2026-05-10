@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoSistemaEletoralEstudiantil.Presentation.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ProyectoSistemaEletoralEstudiantil
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBienvenida());
+            Application.Run(new FrmWelcome());
         }
     }
 }

@@ -30,5 +30,6 @@ namespace ProyectoSistemaEletoralEstudiantil.DataAccess.Models
         public virtual DbSet<Parties> Parties { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Votes> Votes { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
     }
 }
