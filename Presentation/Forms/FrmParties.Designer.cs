@@ -197,9 +197,13 @@
             // 
             // dgvParties
             // 
+            this.dgvParties.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dgvParties.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvParties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParties.GridColor = System.Drawing.Color.DimGray;
             this.dgvParties.Location = new System.Drawing.Point(629, 131);
             this.dgvParties.Name = "dgvParties";
+            this.dgvParties.RowHeadersVisible = false;
             this.dgvParties.RowHeadersWidth = 62;
             this.dgvParties.RowTemplate.Height = 28;
             this.dgvParties.Size = new System.Drawing.Size(546, 394);

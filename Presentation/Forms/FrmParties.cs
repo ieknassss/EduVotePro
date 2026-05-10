@@ -28,8 +28,8 @@ namespace ProyectoSistemaEletoralEstudiantil.Presentation.Forms
         }
         private void LoadParties()
         {
-            dgvParties.DataSource =
-                db.Parties.ToList();
+            dgvParties.Columns["Votes"]
+    .Visible = false;
         }
         private void FrmParties_Load(object sender, EventArgs e)
         {
@@ -55,6 +55,31 @@ namespace ProyectoSistemaEletoralEstudiantil.Presentation.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(
+     txtNumber.Text,
+     out int partyNumber))
+            {
+                MessageBox.Show(
+                    "Ingrese un número válido."
+                );
+
+                return;
+            }
+
+            bool numberExists =
+    db.Parties.Any(p =>
+        p.Number.ToString() ==
+        txtNumber.Text);
+
+            if (numberExists)
+            {
+                MessageBox.Show(
+                    "Ese número ya existe."
+                );
+
+                return;
+            }
+
             if (txtName.Text.Trim() == "")
             {
                 MessageBox.Show(
@@ -86,8 +111,7 @@ namespace ProyectoSistemaEletoralEstudiantil.Presentation.Forms
             Parties party = new Parties()
             {
                 Name = txtName.Text,
-                Number =
-                    Convert.ToInt32(txtNumber.Text),
+                Number = partyNumber,
 
                 Motto = txtMotto.Text,
 
@@ -159,6 +183,20 @@ namespace ProyectoSistemaEletoralEstudiantil.Presentation.Forms
                 txtDescription.Text =
                     row.Cells["Description"]
                     .Value.ToString();
+
+                string logoName =
+    row.Cells["LogoPath"]
+    .Value.ToString();
+
+                string fullPath =
+                    Application.StartupPath +
+                    "\\Uploads\\" +
+                    logoName;
+
+                if (File.Exists(fullPath))
+                {
+                    picLogo.ImageLocation = fullPath;
+                }
             }
         }
 
